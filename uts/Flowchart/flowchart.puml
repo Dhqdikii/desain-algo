@@ -1,0 +1,37 @@
+@startuml
+start
+:Mulai;
+:Login;
+
+if (Login Berhasil?) then (Ya)
+    :Tampilkan Menu Utama;
+    if (Apakah Data Guru Baru?) then (Ya)
+        :Input Nama Guru;
+        :Input NIP;
+        :Input Mata Pelajaran;
+        :Input Alamat;
+        :Input Nomor Telepon;
+        :Simpan ke Database;
+    else (Tidak)
+        :Pilih Data Guru yang Ingin Diperbarui;
+        if (Apakah Ingin Menghapus Data?) then (Ya)
+            :Hapus Data Guru dari Database;
+        else (Tidak)
+            :Perbarui Nama Guru;
+            :Perbarui NIP;
+            :Perbarui Mata Pelajaran;
+            :Perbarui Alamat;
+            :Perbarui Nomor Telepon;
+            :Simpan Perubahan;
+        endif
+    endif
+    :Menampilkan Data Guru;
+else (Tidak)
+    :Tampilkan Pesan Error Login;
+    :Kembali ke Login;
+endif
+
+stop
+@endumla
+
+
